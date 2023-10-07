@@ -1,0 +1,57 @@
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/imagenes/recurso1.jpg'); /* Ruta a tu imagen de fondo */
+    background-size: cover;
+    opacity: 0.5; 
+    z-index: -1; /* Coloca la imagen detrás del contenido */
+  }
+
+  /* tab5.page.scss */
+
+/* Estilo de fondo para toda la página */
+ion-content {
+    background-color: #f4f4f4;
+  }
+  
+  /* Estilo del encabezado */
+  ion-toolbar {
+    --ion-background-color: #3880ff; /* Color de fondo del encabezado */
+    --color: #fff; /* Color del texto en el encabezado */
+  }
+  
+  /* Estilo de la tarjeta de información del aprendiz */
+  ion-card {
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilo de los títulos de las secciones */
+  ion-item-divider {
+    background-color: #ddd;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px;
+  }
+  
+  /* Estilo de los elementos de la lista */
+  ion-item {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 5px 10px;
+  }
+  
+  /* Estilo del botón de logout */
+  ion-button[slot="end"] {
+    --color: #fff; /* Color del icono de logout */
+  }
+  
+  /* Estilo del botón de inicio */
+  ion-button[slot="icon-only"] {
+    --color: #fff; /* Color del icono de inicio */
+  }

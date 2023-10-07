@@ -1,17 +1,36 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title>Teoria</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+      <ion-button (click)="goToTab1()">
+        <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+      </ion-button>
+    
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class="background-image"></div> 
+  <!-- Información del instructor -->
+  <ion-card>
+    <ion-card-header>
+      Información del aprendiz
+    </ion-card-header>
+    <ion-card-content>
+      Categoría seleccionada: {{ selectedCategory }}    </ion-card-content>
+  </ion-card>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-list>
+    <ion-item *ngFor="let clase of clases">
+      <ion-label>{{ clase.nombre }}</ion-label>
+      <ion-button slot="end" (click)="agendarClase(clase)">Agendar</ion-button>
+    </ion-item>
+  </ion-list>
+  
+
+
 </ion-content>

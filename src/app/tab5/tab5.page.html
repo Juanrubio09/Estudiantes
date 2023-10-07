@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Clases agendadas</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+      <ion-button (click)="goToTab1()">
+        <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="background-image"></div>
+  <!-- Información del instructor -->
+  <ion-card>
+    <ion-card-header>
+      Información del aprendiz
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Aquí muestra la información del instructor (nombre, categoría, etc.) -->
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Sección para clases de Teoría -->
+  <ion-list *ngIf="filterByType('Teoría').length > 0">
+    <ion-item-divider color="light">
+      Clases de Teoría
+    </ion-item-divider>
+    <ion-item *ngFor="let clase of filterByType('Teoría')">
+      <ion-label>{{ clase.nombre }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Sección para clases de Taller -->
+  <ion-list *ngIf="filterByType('Taller').length > 0">
+    <ion-item-divider color="light">
+      Clases de Taller
+    </ion-item-divider>
+    <ion-item *ngFor="let clase of filterByType('Taller')">
+      <ion-label>{{ clase.nombre }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
